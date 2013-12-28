@@ -10,7 +10,10 @@
 \details{
 \tabular{ll}{
 Package: \tab DSBayes\cr
+Version: \tab 1.1\cr
+Date: \tab Dec 27, 2013\cr
 Depends: \tab R (>= 2.15.1)\cr
+Imports: \tab BB \cr
 License: \tab GPL Version 2 \cr
 }
 
@@ -22,7 +25,7 @@ DSBayes:  A function to calculate the posterior mode and credible interval of th
 }
 }
 
-\author{Ravi Varadhan <rvaradhan@jhmi.edu> and Wenliang Yao (maintainer) <yaow080@gmail.com>}
+\author{Ravi Varadhan <rvaradhan@jhmi.edu> and Wenliang Yao <yaow080@gmail.com>}
 
 
 \references{

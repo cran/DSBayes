@@ -1,1 +1,5 @@
-exportPattern("^[[:alpha:]]+")
+
+import(BB)
+
+export(
+  "DSBayes" )

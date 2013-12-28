@@ -8,26 +8,26 @@ the Dixon-Simon model for subgroup analysis (with binary covariates) in clinical
 }
 \arguments{
     \item{obj}{
-      \code{obj} is the object from a regression model, for example, 
+	 The object from a regression model, for example, 
       linear regression or Cox proportional-hazards regression.
       If \code{obj} is specified, then \code{thetahat} and \code{C} 
       should be set to NULL. 
       }
 
     \item{thetahat}{
-      \code{thetahat} is a vector of regression coefficients without the intercept.
+	 A vector of regression coefficients without the intercept.
       If \code{thetahat} is specified, then \code{C} should be provided 
       as well, and \code{obj} should be set at NULL. 
       } 
 
     \item{C}{
-      \code{C} is a variance covariance matrix of regression.
+	 A variance covariance matrix of regression.
       If \code{C} is given, then \code{thetahat} should also be provided,
       and \code{obj} should be set at NULL. 
       } 
 
-    \item{lvector}{
-      A vector or a matrix that denotes linear combination of the 
+    \item{lvector}{      
+	 A vector or a matrix that denotes linear combination of the 
       parameters for which posterior estimates are desired.
       Note that, the order of the  \code{lvector} should be as follows:
       the first parameter should always be the treatment indicator, 
@@ -37,30 +37,31 @@ the Dixon-Simon model for subgroup analysis (with binary covariates) in clinical
 
     \item{control}{A list of control parameters. See *Details*.}
 
-    \item{...}{Additional arguments.}
+    \item{\dots}{Additional arguments.}
 }
 
 
-\value{
+\details{
+The \code{control} argument is a list that can supply any of the following components:
 \describe{
-\item{tol}{A relative accuracy for numerical quadrature. Default is \code{tol = 1.e-03}.}
+  \item{\code{tol}}{A relative accuracy for numerical quadrature. Default is \code{tol = 1.e-03}.}
 
-\item{epsilon}{A small positive quantity to ensure proper posterior resulting from
+  \item{\code{epsilon}}{A small positive quantity to ensure proper posterior resulting from
   Jeffreys' prior. Default is \code{epsilon = 0.005}.}
 
-\item{ci}{Level of the credible interval. Default is \code{ci = 0.95}.}
+  \item{\code{ci}}{Level of the credible interval. Default is \code{ci = 0.95}.}
 
-\item{k}{
-  A constant value to determine the interval width for searching the Bayesian credible interval,
+  \item{\code{k}}{ A constant value to determine the interval width for searching the Bayesian credible interval,
   from lower to upper for a maximum of the density function. Default value for 
   \code{k} is, k = qnorm((6+ci)/7) = 2.45.
   }
 
-\item{transform}{
-  If \code{transform = NULL}, then no transformation is performed.  
+  \item{\code{transform}}{= NULL, then no transformation is performed.  
   If \code{transform = "logit"}, which is at default, then logit transformation 
   is applied for posterior density function to find the credibile interval,
-  \code{logit(x) = log(x/(1-x))}. }                            
+  \code{logit(x) = log(x/(1-x))}. }
+
+  \item{\code{print}}{= TRUE  or FALSE, indicating whether or not we want to print  \code{control} parameters and progress. Default is FALSE.}   
 } 
 } 
 
