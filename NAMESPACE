@@ -1,5 +1,6 @@
 
-import(BB)
-
+importFrom("BB", "dfsane")
+importFrom("stats", "coef", "dnorm", "integrate", "optimize", "qlogis",
+     "qnorm", "uniroot", "vcov")
 export(
   "DSBayes" )
